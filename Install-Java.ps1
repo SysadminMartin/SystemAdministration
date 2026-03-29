@@ -36,7 +36,7 @@
     Installs Java
 
     .DESCRIPTION
-    This script uninstalls old Java versions, then installs a newer version. Use the SkipInstallation switch to only install Java, without trying to uninstall anything first.
+    This script uninstalls old Java versions, then installs a newer version. Use the SkipUninstallation switch to only install Java, without trying to uninstall anything first.
 
     .INPUTS
     None
