@@ -244,7 +244,7 @@ try {
     New-Item -Path $exportDirectoryPath -ItemType Directory | Out-Null
     Backup-GPO -All -Path $exportDirectoryPath | Out-Null
 
-    $zipFilename = 'GPO_Policies_{1}.zip' -f $timestamp
+    $zipFilename = 'GPO_Policies_{0}.zip' -f $timestamp
     $zipFilePath = Join-Path -Path $GPODestinationDirectoryPath -ChildPath $zipFilename
     Compress-Archive -Path $exportDirectoryPath -DestinationPath $zipFilePath
 
