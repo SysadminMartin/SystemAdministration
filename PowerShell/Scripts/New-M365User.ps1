@@ -42,13 +42,6 @@ This script generates credentials and creates M365 accounts for new users.
 New-M365User.ps1 -ConfigurationPath 'C:\HR\Onboarding-Config.psd1'
 #>
 param(
-    [Parameter(Mandatory)]
-    [ValidateScript({
-        if (Test-Path -Path $_ -PathType Leaf) { return $true }
-        else { throw [System.IO.FileNotFoundException] "Cannot find the file '$_'." }
-    })]
-    [string]$ConfigurationPath,
-
     [string]$Organization,
 
     [string]$TenantId,
