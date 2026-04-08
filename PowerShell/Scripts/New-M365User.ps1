@@ -554,9 +554,7 @@ function New-Microsoft365User {
 
         [string[]]$TeamsGroupId = @(),
 
-        [PSCustomObject[]]$TeamsChannelSettings = @(),
-
-        [PSCustomObject[]]$MailboxPermissionSettings = @()
+        [string[]]$MailboxAccessWithSendPermission = @()
     )
 
     Write-Verbose 'Checking if user exists...'
@@ -656,7 +654,7 @@ function New-Microsoft365User {
         }
 
         if ((($DistributionGroupMail | Measure-Object).Count -gt 0) -or
-            (($MailboxPermissionSettings | Measure-Object).Count -gt 0)) {
+            (($MailboxAccessWithSendPermission | Measure-Object).Count -gt 0)) {
             Write-Verbose 'Fetching user mailbox...'
             try {
                 $params = @{
@@ -789,7 +787,7 @@ $newUserParams = @{
     SecurityGroupId = $SecurityGroupId
     DistributionGroupMail = $DistributionGroupMail
     TeamsGroupId = $TeamsGroupId
-    MailboxPermissionSettings = $MailboxAccessWithSendPermission
+    MailboxAccessWithSendPermission = $MailboxAccessWithSendPermission
 }
 $newUserParams | Format-List
 Read-Host ('Press <Enter> to begin user creation/configuration for "{0}" or <Ctrl+C> to cancel' -f $UserPrincipalName)
