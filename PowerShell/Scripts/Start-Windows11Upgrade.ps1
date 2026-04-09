@@ -274,12 +274,14 @@ if ($isSystemEligibleForUpgrade -or $Force) {
         Write-Host 'Unable to verify Secure Boot state. The upgrade will proceed anyway.' -ForegroundColor Yellow
     }
 
+    # Remove targeted release registry value (which may block the upgrade if it's been enabled).
     $registryWindowsUpdatePath = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate'
     if (Test-Path -Path $registryWindowsUpdatePath) {
         Write-Verbose 'Removing Windows Update release version registry values...'
         Remove-ItemProperty -Path $registryWindowsUpdatePath -Name @('TargetReleaseVersion', 'TargetReleaseVersionInfo') -Force -ErrorAction SilentlyContinue | Out-Null
     }
 
+    # Remove declined Windows Update offer registry value (which may block the upgrade if it's been enabled).
     $registryWindowsUpdateUxSettingsPath = 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings'
     if (Test-Path -Path $registryWindowsUpdateUxSettingsPath) {
         Write-Verbose 'Removing Windows Update offer declined registry value...'
