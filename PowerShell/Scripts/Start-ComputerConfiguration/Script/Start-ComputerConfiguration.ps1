@@ -4,11 +4,11 @@
 
 .GUID dd97ca12-6b5c-4f3c-a67b-491eda880d80
 
-.AUTHOR Name
+.AUTHOR Martin Olsson
 
-.COMPANYNAME Company
+.COMPANYNAME Martin Olsson
 
-.COPYRIGHT (c) Company. All rights reserved.
+.COPYRIGHT (c) Martin Olsson. All rights reserved.
 
 .TAGS
 
