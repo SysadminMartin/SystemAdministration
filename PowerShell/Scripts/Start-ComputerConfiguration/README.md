@@ -8,5 +8,6 @@ The script configures baseline settings for a Windows device (including optional
 
 # How to use
 1. Copy all content to a USB drive. Do not change the file/folder structure (except subfolders in the Software folders).
-1. Launch "Computer computer.bat" from the freshly install Windows device that should be configured.
-1. Follow the script prompts to decide what to install and configure.
+1. Edit "Configure computer.bat" and set correct values for the variables (DOMAIN_NAME, DOMAIN_JOIN_ACCOUNT, DESKTOP_OU_PATH, LAPTOP_OU_PATH).
+1. Launch "Configure computer.bat" from the freshly installed Windows device that should be configured.
+1. Follow the script and answer its prompts to configure the device.
