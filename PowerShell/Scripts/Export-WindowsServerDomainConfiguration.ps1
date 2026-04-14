@@ -51,14 +51,14 @@ param(
         if (Test-Path -Path $_ -PathType Container) { return $true }
         else { throw [System.IO.DirectoryNotFoundException] "Cannot find the directory '$($_)'." }
     })]
-    $Destination,
+    [string]$Destination,
 
     [Parameter(Mandatory)]
     [ValidateRange(0, 3650)]
-    $RetentionDays = 0,
+    [int]$RetentionDays = 0,
 
     [ValidateNotNull()]
-    $DNSZones = @()
+    [string[]]$DNSZones = @()
 )
 
 #region Functions
