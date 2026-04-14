@@ -139,7 +139,6 @@ if ((Test-InstalledWifiProfile -SSID $SSID) -eq $false) {
 
     try {
         Invoke-Expression ('netsh wlan add profile filename="{0}"' -f $ssidFilePath) -ErrorAction 'Stop'
-        # Invoke-Expression ('netsh wlan add profile filename="{0}" user=all' -f $ssidFilePath) -ErrorAction 'Stop'
         Write-Verbose ('Added "{0}" WiFi profile from XML file "{1}".' -f $SSID, $ssidFilePath)
     }
     catch {
