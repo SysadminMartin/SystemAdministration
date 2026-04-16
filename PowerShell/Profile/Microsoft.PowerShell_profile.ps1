@@ -40,8 +40,8 @@ function Prompt {
     return ' '
 }
 
-# Source ("import") all .ps1 files recursively in custom profile functions folder.
+# Source all .ps1 files recursively from a custom profile functions folder.
 Get-ChildItem -Path "$env:USERPROFILE\Documents\PowerShell\ProfileFunctions" -Filter '*.ps1' -File -Recurse | ForEach-Object { . $_.FullName }
 
 # Automatically run tasks each workday.
-Start-PSProfileWorkday
+Invoke-WorkdayTasks
