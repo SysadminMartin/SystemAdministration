@@ -45,4 +45,3 @@ Get-ChildItem -Path "$env:USERPROFILE\Documents\PowerShell\ProfileFunctions" -Fi
 
 # Automatically run tasks each workday.
 Start-PSProfileWorkday
-
